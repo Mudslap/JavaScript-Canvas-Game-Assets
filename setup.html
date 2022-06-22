@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <!--Or you can have a seperate css file instead of the style tag-->
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      #myCanvas{
+        background-color: gray;
+        width: 900px; /*You can change the width and height of the canvas depending on the game.*/
+        height: 900px;
+
+        /*sets canvas to the middle*/
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas"></canvas>
+    <script>
+      //Game code goes below. Or you can add seperate script tags or JS files!
+      var canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext("2d");
+      canvas.width = 900; //changes the height of the canvas context to match the pixels set in the head.
+      canvas.height = 900;
+      
+      //Game/Draw Loop. Whatever you want to draw on the screen will be run here
+      var draw = setInterval(function(){
+        //Draws a red rectangle at (0,0) with a width and height of 10 by 10.
+        ctx.fillStyle="red";
+        ctx.fillRect(0,0,10,10);
+      }, 10);
+    </script>
+  <body>
+</html>
